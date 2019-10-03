@@ -279,7 +279,9 @@ test_expect_success "don't overload target directory" '
 	) &&
 	echo git-trace2-overload >>expected_filenames.txt &&
 	ls trace_target_dir >ls_output.txt &&
-	test_cmp expected_filenames.txt ls_output.txt
+	test_cmp expected_filenames.txt ls_output.txt &&
+	head -n1 trace_target_dir/git-trace2-overload | grep \"event\":\"version\" &&
+	head -n2 trace_target_dir/git-trace2-overload | tail -n1 | grep \"event\":\"overload\"
 '
 
 test_done
