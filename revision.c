@@ -122,7 +122,7 @@ static void paths_and_oids_init(struct hashmap *map)
 static void paths_and_oids_clear(struct hashmap *map)
 {
 	struct hashmap_iter iter;
-	struct path_and_oids_entry *entry;
+	struct path_and_oids_entry *entry = NULL;
 	hashmap_iter_init(map, &iter);
 
 	while ((entry = (struct path_and_oids_entry *)hashmap_iter_next(&iter))) {
@@ -205,7 +205,7 @@ void mark_trees_uninteresting_sparse(struct repository *r,
 	unsigned has_interesting = 0, has_uninteresting = 0;
 	struct hashmap map;
 	struct hashmap_iter map_iter;
-	struct path_and_oids_entry *entry;
+	struct path_and_oids_entry *entry = NULL;
 	struct object_id *oid;
 	struct oidset_iter iter;
 

@@ -447,7 +447,7 @@ static int fingerprint_similarity(struct fingerprint *a, struct fingerprint *b)
 {
 	int intersection = 0;
 	struct hashmap_iter iter;
-	const struct fingerprint_entry *entry_a, *entry_b;
+	const struct fingerprint_entry *entry_a, *entry_b = NULL;
 
 	hashmap_iter_init(&b->map, &iter);
 
@@ -466,7 +466,7 @@ static void fingerprint_subtract(struct fingerprint *a, struct fingerprint *b)
 {
 	struct hashmap_iter iter;
 	struct fingerprint_entry *entry_a;
-	const struct fingerprint_entry *entry_b;
+	const struct fingerprint_entry *entry_b = NULL;
 
 	hashmap_iter_init(&b->map, &iter);
 
