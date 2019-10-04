@@ -190,8 +190,8 @@ test_expect_success 'parallel' '
 	test_must_fail env GIT_TRACE="$PWD/trace" \
 		git fetch --jobs=2 --multiple one two 2>err &&
 	grep "2 tasks" trace &&
-	grep "one.*128" err &&
-	grep "two.*128" err
+	test_i18ngrep "one.*128" err &&
+	test_i18ngrep "two.*128" err
 '
 
 test_done
