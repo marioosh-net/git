@@ -5570,8 +5570,7 @@ sub git_project_search_form {
 	print $cgi->hidden(-name => 'pf', -value => $project_filter). "\n"
 		if (defined $project_filter);
 	print $cgi->textfield(-name => 's', -value => $searchtext,
-	                      -title => "Search project by name and description$limit",
-	                      -size => 60) . "\n" .
+	                      -title => "Search project by name and description$limit") . "\n" .
 	      "<span title=\"Extended regular expression\">" .
 	      $cgi->checkbox(-name => 'sr', -value => 1, -label => 're',
 	                     -checked => $search_use_regexp) .
