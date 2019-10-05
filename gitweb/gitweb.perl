@@ -4194,6 +4194,7 @@ sub git_header_html {
 <meta http-equiv="content-type" content="$content_type; charset=utf-8"/>
 <meta name="generator" content="gitweb/$version git/$git_version$mod_perl_version"/>
 <meta name="robots" content="index, nofollow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>$title</title>
 EOF
 	# the stylesheet, favicon etc urls won't work correctly with path_info
