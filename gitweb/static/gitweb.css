@@ -95,6 +95,7 @@ div#generating_info {
 div.page_body {
 	padding: 8px;
 	font-family: monospace;
+	overflow-x: scroll;
 }
 
 div.title, a.title {
